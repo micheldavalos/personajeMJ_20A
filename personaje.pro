@@ -5,7 +5,9 @@ CONFIG -= qt
 
 SOURCES += \
         main.cpp \
-        personaje.cpp
+        personaje.cpp \
+        videojuego.cpp
 
 HEADERS += \
-    personaje.h
+    personaje.h \
+    videojuego.h

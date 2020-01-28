@@ -1,34 +1,50 @@
 #include <iostream>
 #include "personaje.h"
+#include "videojuego.h"
 
 using namespace std;
 
 int main()
 {
-    Personaje p;
-    string s;
-    int valor;
+    Videojuego v;
+    string op;
 
-    cout << "Nombre: ";
-    cin >> s;
-    p.setNombre(s);
+    while (true) {
+        cout << "1) Agregar Personaje" << endl;
+        cout << "2) Mostrar Personajes" << endl;
+        cout << "0) Salir";
+        getline(cin, op);
 
-    cout << "Tipo: ";
-    cin >> s;
-    p.setTipo(s);
+        if (op == "1") {
+            Personaje p;
+            string s;
+            int valor;
 
-    cout << "Fuerza: ";
-    cin >> valor;
-    p.setFuerza(valor);
+            cout << "Nombre: ";
+            getline(cin, s);
+            p.setNombre(s);
 
-    cout << "Salud: ";
-    cin >> valor;
-    p.setSalud(valor);
+            cout << "Tipo: ";
+            getline(cin, s);
+            p.setTipo(s);
 
-    cout << "Nombre: " << p.getNombre() << endl;
-    cout << "Tipo:   " << p.getTipo() << endl;
-    cout << "Fuerza: " << p.getFuerza() << endl;
-    cout << "Salud:  " << p.getSalud() << endl;
+            cout << "Fuerza: ";
+            cin >> valor;
+            p.setFuerza(valor);
+
+            cout << "Salud: ";
+            cin >> valor; cin.ignore();
+            p.setSalud(valor);
+
+            v.agregar(p);
+        }
+        else if (op == "2") {
+            v.mostrar();
+        }
+        else if (op == "0") {
+            break;
+        }
+    }
 
     return 0;
 }
