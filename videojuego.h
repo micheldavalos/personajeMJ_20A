@@ -8,11 +8,13 @@ using namespace std;
 class Videojuego
 {
     Personaje arreglo[5];
-    unsigned int i;
+    unsigned int total;
 public:
     Videojuego();
     void agregar(const Personaje &p);
     void mostrar();
+    void respaldar();
+    void recuperar();
 };
 
 #endif // VIDEOJUEGO_H

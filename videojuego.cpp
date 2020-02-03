@@ -1,29 +1,62 @@
 #include "videojuego.h"
+#include <fstream>
 
 Videojuego::Videojuego()
 {
-    i = 0;
+    total = 0;
 }
 
 void Videojuego::agregar(const Personaje &p)
 {
-    if (i >= 5) {
+    if (total >= 5) {
         cout << "El arreglo esta lleno" << endl;
     }
     else {
-        arreglo[i++] = p;
+        arreglo[total++] = p;
     }
     //    i++; // i = i + 1
 }
 
 void Videojuego::mostrar()
 {
-    for (unsigned int j = 0; j < i; j++) {
+    for (unsigned int j = 0; j < total; j++) {
             Personaje &p = arreglo[j];
 
         cout << "Nombre: " << p.getNombre() << endl;
         cout << "Tipo:   " << p.getTipo() << endl;
         cout << "Fuerza: " << p.getFuerza() << endl;
         cout << "Salud:  " << p.getSalud() << endl;
+    }
+}
+
+void Videojuego::respaldar()
+{
+    fstream archivo("personajes.txt", ios::out);
+
+    if (archivo.is_open()) {
+        for (unsigned int j = 0; j < total; j++) {
+            Personaje &p = arreglo[j];
+
+            archivo <<  p.getNombre() << endl;
+            archivo <<  p.getTipo() << endl;
+            archivo <<  p.getFuerza() << endl;
+            archivo <<  p.getSalud() << endl;
+        }
+    }
+}
+
+void Videojuego::recuperar()
+{
+    fstream archivo("personajes.txt", ios::in);
+
+    if (archivo.is_open()) {
+        for (unsigned int j = 0; j < total; j++) {
+            Personaje &p = arreglo[j];
+
+            archivo <<  p.getNombre() << endl;
+            archivo <<  p.getTipo() << endl;
+            archivo <<  p.getFuerza() << endl;
+            archivo <<  p.getSalud() << endl;
+        }
     }
 }

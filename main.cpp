@@ -12,6 +12,7 @@ int main()
     while (true) {
         cout << "1) Agregar Personaje" << endl;
         cout << "2) Mostrar Personajes" << endl;
+        cout << "3) Respaldar" << endl;
         cout << "0) Salir";
         getline(cin, op);
 
@@ -40,6 +41,9 @@ int main()
         }
         else if (op == "2") {
             v.mostrar();
+        }
+        else if (op == "3") {
+            v.respaldar();
         }
         else if (op == "0") {
             break;
