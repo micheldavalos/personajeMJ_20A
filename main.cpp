@@ -13,6 +13,7 @@ int main()
         cout << "1) Agregar Personaje" << endl;
         cout << "2) Mostrar Personajes" << endl;
         cout << "3) Respaldar" << endl;
+        cout << "4) Recuperar" << endl;
         cout << "0) Salir";
         getline(cin, op);
 
@@ -44,6 +45,9 @@ int main()
         }
         else if (op == "3") {
             v.respaldar();
+        }
+        else if (op == "4") {
+            v.recuperar();
         }
         else if (op == "0") {
             break;
