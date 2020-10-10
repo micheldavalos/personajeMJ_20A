@@ -2,7 +2,7 @@
 #define PERSONAJE_H
 
 #include <iostream>
-
+#include <iomanip>
 using namespace std;
 
 class Personaje
@@ -23,10 +23,10 @@ public:
     friend ostream & operator <<(ostream &out,
                                  const Personaje &p)
     {
-        out << "Nombre: " << p.nombre << endl;
-        out << "Tipo:   " << p.tipo << endl;
-        out << "Fuerza: " << p.fuerza << endl;
-        out << "Salud:  " << p.salud << endl;
+        out << setw(8) << p.nombre;
+        out << setw(8) << p.tipo;
+        out << setw(8) << p.fuerza;
+        out << setw(4) << p.salud;
 
         return out;
     }
