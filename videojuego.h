@@ -32,6 +32,12 @@ public:
         }
         return out;
     }
+    friend Videojuego& operator<<(Videojuego &v, const Personaje &p)
+    {
+        v.agregar(p);
+        
+        return v;
+    }
 };
 
 #endif // VIDEOJUEGO_H

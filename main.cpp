@@ -23,7 +23,8 @@ int main()
 
             cin >> p;
 
-            v.agregar(p);
+            // v.agregar(p);
+            v << p << p;
         }
         else if (op == "2") {
             // v.mostrar();
