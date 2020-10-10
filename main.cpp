@@ -25,7 +25,8 @@ int main()
             v.agregar(p);
         }
         else if (op == "2") {
-            v.mostrar();
+            // v.mostrar();
+            cout << v << endl;
         }
         else if (op == "3") {
             v.respaldar();
