@@ -15,19 +15,20 @@ public:
     void mostrar();
     void respaldar();
     void recuperar();
+    void respaldarTabla();
 
     friend ostream& operator<<(ostream &out, const Videojuego &v)
     {
-        cout << left << 
-        setw(8) << "Nombre" << 
-        setw(8) << "Tipo" <<
-        setw(7) << "Fuerza" << 
-        setw(4) << "Salud" << endl;
+        out << left << 
+            setw(8) << "Nombre" << 
+            setw(8) << "Tipo" <<
+            setw(7) << "Fuerza" << 
+            setw(4) << "Salud" << endl;
 
         for (size_t i = 0; i < v.cont; i++) {
             const Personaje &p = v.arreglo[i];
 
-            cout << p << endl;
+            out << p << endl;
         }
         return out;
     }

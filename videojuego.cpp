@@ -82,3 +82,13 @@ void Videojuego::recuperar()
         }
     }
 }
+
+void Videojuego::respaldarTabla()
+{
+    fstream archivo("personajes_tabla.txt", ios::out);
+
+    if (archivo.is_open()) {
+        archivo << *this << endl;
+    }
+    archivo.close();
+}
